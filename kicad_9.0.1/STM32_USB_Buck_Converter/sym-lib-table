@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "Buck_Converters")(type "KiCad")(uri "E:/Proyectos/Kicad_Libraries/Buck_Converters.kicad_sym")(options "")(descr ""))
+)
