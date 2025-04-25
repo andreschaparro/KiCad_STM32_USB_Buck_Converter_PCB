@@ -147,37 +147,40 @@
 
 📝[How to add tooling holes for PCB assembly order](https://jlcpcb.com/help/article/How-to-add-tooling-holes-for-PCB-assembly-order)
 
-3. Generar los gerbers y comprimirlos.
+3. Generar los gerbers.
 
 ![Gerbers](./images/9.png)
 
-4. Generar el drill file.
+4. Generar los drill files.
+5. Comprimir los gerbers junto a los drill files.
 
-![Drill File](./images/10.png)
+![Drill Files](./images/10.png)
 
 📝[How to Prepare Gerber Files Before Placing Orders?](https://jlcpcb.com/help/article/gerber-files-preparation)
 
 📝[How to generate Gerber and Drill files in KiCAD 8?](https://jlcpcb.com/help/article/how-to-generate-gerber-and-drill-files-in-kicad-8)
 
-5. Generar los pick and place files.
+6. Generar los pick and place files.
 
 ![Pick and Place files](./images/11.png)
 
-6. Modificar el nombre de las columnas de los pick and place files.
+7. Modificar el nombre de las columnas de los pick and place files.
 
 ![CSV corregido](./images/12.png)
 
-7. Abrir el editor de esquemas y agregarle a los símbolos un campo llamado `JLCPCB Part #`.
-8. Ingresar el `JLCPCB Part #` de cada componente.
+8. Abrir el editor de esquemas y agregarle a los símbolos un campo llamado `JLCPCB Part #`.
+9. Ingresar el `JLCPCB Part #` de cada componente.
 
 ![JLCPCB Part #](./images/13.png)
 
 ❗Por el momento JLCPCB no ofrece componentes THT. Los mismos, deberán ser comprados por [LCSC](https://www.lcsc.com/) y soldados manualmente.
 
-9. Instalar la extensión `JLC PCB abrication Toolkit` de KiCad.
-10. Abrir el editor de placas y generar el BOM.
+10. Instalar la extensión `JLC PCB abrication Toolkit` de KiCad.
+11. Abrir el editor de placas y generar el BOM.
 
 ![Generar el BOM](./images/14.png)
+
+❗Con esta extensión se crea una carpeta llamada production con todos los archivos para la producción y dentro de ellos el BOM.
 
 📝[Pick & Place File for PCB Assembly](https://jlcpcb.com/help/article/pick-place-file-for-pcb-assembly).
 
@@ -185,7 +188,16 @@
 
 📝[How to generate the BOM and Centroid file from KiCAD](https://jlcpcb.com/help/article/How-to-generate-the-BOM-and-Centroid-file-from-KiCAD).
 
-11. Crear una cuenta en la página del fabricante.
-12. Cargar los archivos y verificar como quedaría el PCB terminado.
+12. Crear una cuenta en la página del fabricante.
+13. Cargar los archivos y verificar la orientación de los componentes.
 
-![PCB a fabricar](./images/15.png)
+![PCB con errores](./images/15.png)
+
+❗En la imagen se ve que hay que rotar: U2 -90°, U1 -180°, Q1 -180°, U3 -90°.
+
+📝Cuando se rota un componente, un ángulo positivo es en contra de las agujas del reloj. Y un ángulo negativo en el sentido de las agujas del reloj.
+
+14. Corregir la orientación de los componentes en los pick and place files.
+15. Repetir el paso 12.
+
+![PCB corregido](./images/16.png)
